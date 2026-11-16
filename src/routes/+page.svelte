@@ -1,70 +1,96 @@
 <script>
 	import * as Avatar from '#lib/components/ui/avatar/index.ts';
-	import Badge from '#lib/components/ui/badge/badge.svelte';
-    import { Button } from '#lib/components/ui/button/index.ts';
+	import { Badge } from '#lib/components/ui/badge/index.ts';
+	import { Button } from '#lib/components/ui/button/index.ts';
 </script>
 
-<div class="flex items-center justify-center gap-3 rounded-lg border bg p-6 text-card-foreground shadow-sm">
-    <Avatar.Root class="h-40 w-40">
-        <Avatar.Image src="https://github.com/pieisspy.png" alt="Profile"/>
-        <Avatar.Fallback>GH</Avatar.Fallback>
-    </Avatar.Root>
-    <div>
-        <h2 class="text-2xl font-bold tracking-tight">PieIsSpy</h2>
-        <p>Hello! I am PieIsSpy! I am a QA Engineer and Usability Tester who is also passionate in Animations!</p>
-        <div>
-            <a class="text-sm font-medium underline underline-offset-4 hover:text-primary" href="https://www.linkedin.com/in/karl-deejay-omandac-470203434">LinkedIn</a>
-            <a class="text-sm font-medium underline underline-offset-4 hover:text-primary" href="https://github.com/PieIsSpy">Github</a>
-        </div>
-        <Button href='/resume.pdf' size="sm" class="rounded-sm margin">Resume</Button>
-    </div>
-</div>
+<main class="mx-auto flex w-full max-w-2xl flex-col gap-6 px-4 py-12">
+	<div class="flex flex-col items-center gap-6 rounded-lg border bg-card p-6 text-card-foreground shadow-sm sm:flex-row sm:items-start">
+		<Avatar.Root class="h-32 w-32 shrink-0">
+			<Avatar.Image src="https://github.com/pieisspy.png" alt="Profile" />
+			<Avatar.Fallback>GH</Avatar.Fallback>
+		</Avatar.Root>
 
-<div>
-    <div class="mx-auto flex w-full max-w-2xl flex-col gap-6 px-4 py-12">
-        <h3 class="text-lg font-semibold tracking-tight mb-3">Skills</h3>
-        <div>
-            <p>Languages:</p>
-            <Badge variant="secondary">C</Badge>
-            <Badge variant="secondary">Java</Badge>
-            <Badge variant="secondary">Python</Badge>
-            <Badge variant="secondary">Typescript</Badge>
-        </div>
+		<div class="flex flex-col items-center gap-3 text-center sm:items-start sm:text-left">
+			<h2 class="text-2xl font-bold tracking-tight">PieIsSpy</h2>
+			<p class="text-sm text-muted-foreground">
+				Hello! I am PieIsSpy! I am a QA Engineer and Usability Tester who is also passionate in Animations!
+			</p>
 
-        <div>
-            <p>Frontend:</p>
-            <Badge variant="secondary">HTML/CSS</Badge>
-            <Badge variant="secondary">React</Badge>
-            <Badge variant="secondary">Svelte</Badge>
-        </div>
-
-        <div>
-            <p>Tools:</p>
-            <Badge variant="secondary">Git</Badge>
-            <Badge variant="secondary">Github</Badge>
-            <Badge variant="secondary">Npm</Badge>
-        </div>
-    </div>
-
-    <div class="mx-auto flex w-full max-w-2xl flex-col gap-6 px-4 py-12">
-        <h3 class="text-lg font-semibold tracking-tight mb-3">Education</h3>
-        <div>
-            <div class="flex justify-between">
-                <p class="font-semibold">De La Salle University - Manila</p>
-                <p class="font-light">Expected 2028</p>
+			<div class="flex items-center gap-4">
+                <a
+                    class="text-sm font-medium underline underline-offset-4 hover:text-primary"
+                    href="https://www.linkedin.com/in/karl-deejay-omandac-470203434"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    LinkedIn
+                </a>
+                <a
+                    class="text-sm font-medium underline underline-offset-4 hover:text-primary"
+                    href="https://github.com/PieIsSpy"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    GitHub
+                </a>
             </div>
-            <p>Bachelor in Science in Computer Science, Major in Software Technology</p>
-        </div>
-    </div>
 
-    <div class="mx-auto flex w-full max-w-2xl flex-col gap-6 px-4 py-12">
-        <h3 class="text-lg font-semibold tracking-tight mb-3">Experience</h3>
-        <div>
-            <div class="flex justify-between">
-                <p class="font-semibold">Slottle</p>
-                <p class="font-light">2026</p>
+            <div class="pt-1">
+                <Button href="/resume.pdf" size="sm" class="rounded-sm">Resume</Button>
             </div>
-            <p>QA and Usability Tester</p>
-        </div>
-    </div>
-</div>
+		</div>
+	</div>
+
+	<div class="flex flex-col gap-4 rounded-lg border bg-card p-6 text-card-foreground shadow-sm">
+		<h3 class="text-lg font-semibold tracking-tight">Skills</h3>
+
+		<div class="flex flex-col gap-3">
+			<div class="flex flex-wrap items-center gap-2">
+				<span class="w-24 text-sm font-medium text-muted-foreground">Languages:</span>
+				<Badge variant="secondary" class="rounded-sm">C</Badge>
+				<Badge variant="secondary" class="rounded-sm">Java</Badge>
+				<Badge variant="secondary" class="rounded-sm">Python</Badge>
+				<Badge variant="secondary" class="rounded-sm">TypeScript</Badge>
+			</div>
+
+			<div class="flex flex-wrap items-center gap-2">
+				<span class="w-24 text-sm font-medium text-muted-foreground">Frontend:</span>
+				<Badge variant="secondary" class="rounded-sm">HTML/CSS</Badge>
+				<Badge variant="secondary" class="rounded-sm">React</Badge>
+				<Badge variant="secondary" class="rounded-sm">Svelte</Badge>
+			</div>
+
+			<div class="flex flex-wrap items-center gap-2">
+				<span class="w-24 text-sm font-medium text-muted-foreground">Tools:</span>
+				<Badge variant="secondary" class="rounded-sm">Git</Badge>
+				<Badge variant="secondary" class="rounded-sm">GitHub</Badge>
+				<Badge variant="secondary" class="rounded-sm">npm</Badge>
+			</div>
+		</div>
+	</div>
+
+	<div class="flex flex-col gap-3 rounded-lg border bg-card p-6 text-card-foreground shadow-sm">
+		<h3 class="text-lg font-semibold tracking-tight">Education</h3>
+		<div class="flex flex-col gap-1">
+			<div class="flex items-baseline justify-between gap-2">
+				<p class="font-medium">De La Salle University - Manila</p>
+				<p class="text-xs text-muted-foreground">Expected 2028</p>
+			</div>
+			<p class="text-sm text-muted-foreground">
+				Bachelor of Science in Computer Science, Major in Software Technology
+			</p>
+		</div>
+	</div>
+
+	<div class="flex flex-col gap-3 rounded-lg border bg-card p-6 text-card-foreground shadow-sm">
+		<h3 class="text-lg font-semibold tracking-tight">Experience</h3>
+		<div class="flex flex-col gap-1">
+			<div class="flex items-baseline justify-between gap-2">
+				<p class="font-medium">Slottle</p>
+				<p class="text-xs text-muted-foreground">2026</p>
+			</div>
+			<p class="text-sm text-muted-foreground">QA and Usability Tester</p>
+		</div>
+	</div>
+</main>
